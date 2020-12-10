@@ -140,7 +140,7 @@ public class FareCalculatorServiceTest {
     }
 
     @Test
-    public void calculateFareBikeWithReduction(){
+    public void calculateFareBikeWithReduction(){ // RAJOUTER QUERY: AVEC OUT_TIME NOT EMPTY
         Date inTime = new Date();
         inTime.setTime( System.currentTimeMillis() - (  60 * 60 * 1000) );
         Date outTime = new Date();
