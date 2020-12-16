@@ -14,11 +14,15 @@ public class FareCalculatorService {
 
     DataBaseConfig dataBaseTestConfig = new DataBaseConfig();
 
-    public boolean checkIfCameBefore(String vehicleRegNumber){
-        Connection connection = null;
-        try{
-            connection = dataBaseTestConfig.getConnection();
+    public Connection connection;
 
+    public void connecting() throws SQLException, ClassNotFoundException {
+        connection = dataBaseTestConfig.getConnection();
+    }
+
+    public boolean checkIfCameBefore(String vehicleRegNumber){
+        try{
+            connecting();
             //set parking entries to available
             ResultSet hasCame = connection.createStatement().executeQuery(checkOccurenceQuery(vehicleRegNumber));
             hasCame.next();
@@ -68,7 +72,6 @@ public class FareCalculatorService {
                     break;
                 }
                 default:
-                    throw new IllegalArgumentException("Unkown Parking Type");
             }
 
         }

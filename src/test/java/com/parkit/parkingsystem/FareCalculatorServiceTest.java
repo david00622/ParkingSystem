@@ -1,16 +1,25 @@
 package com.parkit.parkingsystem;
 
+import com.parkit.parkingsystem.config.DataBaseConfig;
 import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.constants.ParkingType;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.service.FareCalculatorService;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
+import static com.parkit.parkingsystem.integration.ParkingDataBaseIT.dataBaseTestConfig;
+import static java.lang.invoke.MethodHandles.catchException;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -140,7 +149,7 @@ public class FareCalculatorServiceTest {
     }
 
     @Test
-    public void calculateFareBikeWithReduction(){ // RAJOUTER QUERY: AVEC OUT_TIME NOT EMPTY
+    public void calculateFareBikeWithReduction(){
         Date inTime = new Date();
         inTime.setTime( System.currentTimeMillis() - (  60 * 60 * 1000) );
         Date outTime = new Date();
@@ -151,7 +160,7 @@ public class FareCalculatorServiceTest {
         ticket.setParkingSpot(parkingSpot);
         ticket.setVehicleRegNumber("ABCDEF");
         fareCalculatorService.calculateFare(ticket);
-        assertEquals(0.95 * Fare.BIKE_RATE_PER_HOUR, ticket.getPrice() );
+        assertEquals(0.95 * Fare.BIKE_RATE_PER_HOUR, ticket.getPrice());
     }
 
 }

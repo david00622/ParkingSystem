@@ -7,4 +7,8 @@ public class DbConstants {
                 "WHERE VEHICLE_REG_NUMBER = '" + vehicleRegNumber + "' AND OUT_TIME IS NOT NULL";
     }
 
+    //public static String lockParkingSpots = "UPDATE test.parking SET AVAILABLE=0 WHERE PARKING_NUMBER > 1;";
+
+    //public static String freeParkingSpots = "UPDATE test.parking SET AVAILABLE=1 WHERE PARKING_NUMBER > 1;";
+
 }

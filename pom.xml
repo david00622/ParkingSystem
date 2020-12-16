@@ -22,7 +22,6 @@
         </repository>
     </distributionManagement>
 
-
     <dependencies>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
