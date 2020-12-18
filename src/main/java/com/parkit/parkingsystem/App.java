@@ -4,6 +4,9 @@ import com.parkit.parkingsystem.service.InteractiveShell;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Starting the app.
+ */
 public class App {
     public static final Logger logger = LogManager.getLogger("App");
     public static void main(String args[]){

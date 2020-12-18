@@ -10,6 +10,9 @@ import java.sql.SQLException;
 
 import static com.parkit.parkingsystem.config.DbConstants.checkOccurenceQuery;
 
+/**
+ * Calculates the fare once out.
+ */
 public class FareCalculatorService {
 
     DataBaseConfig dataBaseTestConfig = new DataBaseConfig();

@@ -2,6 +2,9 @@ package com.parkit.parkingsystem.model;
 
 import com.parkit.parkingsystem.constants.ParkingType;
 
+/**
+ * Managing the location of the parking lot.
+ */
 public class ParkingSpot {
     private int number;
     private ParkingType parkingType;

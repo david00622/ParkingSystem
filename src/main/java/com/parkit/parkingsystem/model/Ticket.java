@@ -2,6 +2,9 @@ package com.parkit.parkingsystem.model;
 
 import java.util.Date;
 
+/**
+ * Managing the opening of the tickets.
+ */
 public class Ticket {
     private int id;
     private ParkingSpot parkingSpot;

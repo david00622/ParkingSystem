@@ -5,6 +5,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
+/**
+ * Reading the user inputs.
+ */
 public class InputReaderUtil {
 
     private static Scanner scan = new Scanner(System.in);

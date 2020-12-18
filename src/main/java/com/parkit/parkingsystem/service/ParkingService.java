@@ -11,6 +11,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Date;
 
+/**
+ * Serving the parking service using parking and ticket operations.
+ */
 public class ParkingService {
 
     private static final Logger logger = LogManager.getLogger("ParkingService");
