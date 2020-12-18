@@ -4,6 +4,7 @@ import com.parkit.parkingsystem.config.DataBaseConfig;
 import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.model.Ticket;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ public class FareCalculatorService {
 
     public Connection connection;
 
-    public void connecting() throws SQLException, ClassNotFoundException {
+    public void connecting() throws SQLException, ClassNotFoundException, IOException {
         connection = dataBaseTestConfig.getConnection();
     }
 

@@ -9,4 +9,7 @@
     <Match>
         <Bug category="MALICIOUS_CODE" />
     </Match>
+    <Match>
+        <Bug category="I18N" />
+    </Match>
 </FindBugsFilter>
