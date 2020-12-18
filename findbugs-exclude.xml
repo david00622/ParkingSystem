@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <Match>
+        <Bug category="EXPERIMENTAL" />
+    </Match>
+    <Match>
+        <Bug category="BAD_PRACTICE" />
+    </Match>
+    <Match>
+        <Bug category="MALICIOUS_CODE" />
+    </Match>
+</FindBugsFilter>
