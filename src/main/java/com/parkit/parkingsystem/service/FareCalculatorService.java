@@ -4,12 +4,10 @@ import com.parkit.parkingsystem.config.DataBaseConfig;
 import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.model.Ticket;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
-import static com.parkit.parkingsystem.config.DbConstants.checkOccurenceQuery;
+import static com.parkit.parkingsystem.constants.DBConstants.checkOccurenceQuery;
 
 /**
  * Calculates the fare once out.
@@ -19,14 +17,15 @@ public class FareCalculatorService {
     DataBaseConfig dataBaseTestConfig = new DataBaseConfig();
 
     public Connection connection;
-
+/*
     public void connecting() throws SQLException, ClassNotFoundException, IOException {
         connection = dataBaseTestConfig.getConnection();
-    }
+    }*/
 
     public boolean checkIfCameBefore(String vehicleRegNumber){
+
         try{
-            connecting();
+            connection = dataBaseTestConfig.getConnection();
             //set parking entries to available
             ResultSet hasCame = connection.createStatement().executeQuery(checkOccurenceQuery(vehicleRegNumber));
             hasCame.next();
@@ -76,6 +75,7 @@ public class FareCalculatorService {
                     break;
                 }
                 default:
+                    throw new IllegalArgumentException("Unkown Parking Type");
             }
 
         }

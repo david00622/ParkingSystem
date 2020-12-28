@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
  * Starting the app.
  */
 public class App {
-    public static final Logger logger = LogManager.getLogger("App");
+    private static final Logger logger = LogManager.getLogger("App");
     public static void main(String args[]){
         logger.info("Initializing Parking System");
         InteractiveShell.loadInterface();
