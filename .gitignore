@@ -1,3 +1,5 @@
 *.iml
 /target
 /resources/*.html
+/resources/com
+/resources/index-files
